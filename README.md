@@ -1,2 +1,1 @@
-# Roblox-Game-Script
-My Roblox Game Script
+Hi! Click "My Roblox Game Product Script" Above!
