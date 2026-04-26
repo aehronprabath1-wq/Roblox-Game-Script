@@ -1,0 +1,98 @@
+local ProductConfigurations = {}
+
+ProductConfigurations.Products = {
+	["SkipRebirth"] = 3551941676,
+	
+	["ItemProduct1"] = 3563101119,
+	["ItemProduct2"] = 3551940811,
+	["ItemProduct3"] = 3551941182,
+
+	["CashProduct1"] = 3551929449,
+	["CashProduct2"] = 3551929916,
+	["CashProduct3"] = 3554020502,
+	
+	["MegaTsunami"] = 3551927519,
+
+	["SpeedPlus1"] = 3551930758,
+	["SpeedPlus5"] = 3551931095,
+	["SpeedPlus10"] = 3551931408,
+
+	["CarryUpgrade_Lvl2"] = 3551932240, 
+	["CarryUpgrade_Lvl3"] = 3551932774,
+	["CarryUpgrade_Lvl4"] = 3551933208,
+	["CarryUpgrade_Lvl5"] = 3551933603,
+	["CarryUpgrade_Lvl6"] = 3551934132,
+	["CarryUpgrade_Lvl7"] = 3561979489,
+}
+
+ProductConfigurations.GamePasses = {
+	["VIP"] = 1747532920,
+	["StarterPack"] = 1747575029,
+	["ProPack"] = 1747365131,
+}
+
+ProductConfigurations.CarryUpgradeMap = {
+	["CarryUpgrade_Lvl2"] = 2,
+	["CarryUpgrade_Lvl3"] = 3,
+	["CarryUpgrade_Lvl4"] = 4,
+	["CarryUpgrade_Lvl5"] = 5,
+	["CarryUpgrade_Lvl6"] = 6,
+}
+
+ProductConfigurations.PackRewards = {
+	["StarterPack"] = {
+		Money = 500000000000,
+		Items = {
+			{Name = "Divviti", Mutation = "Neon", Rarity = "Legendary", Level = 1},
+			{Name = "Jergo", Mutation = "Ruby", Rarity = "Legendary", Level = 1}
+		}
+	},
+	["ProPack"] = {
+		Money = 100000000000000000,
+		Items = {
+			{Name = "Divviti", Mutation = "Diamond", Rarity = "Mythical", Level = 2},
+			{Name = "Spali", Mutation = "Neon", Rarity = "Mythical", Level = 2},
+			{Name = "Tribitti", Mutation = "Ruby", Rarity = "Mythical", Level = 2},
+			{Name = "Tribitti", Mutation = "Diamond", Rarity = "Mythical", Level = 2},
+			{Name = "Tribitti", Mutation = "BloodMoon", Rarity = "Mythical", Level = 3},
+			{Name = "Divviti", Mutation = "BloodMoon", Rarity = "Mythical", Level = 2},
+			{Name = "Tribitti", Mutation = "Kitsune", Rarity = "Mythical", Level = 3},
+			
+		}
+	}
+}
+
+ProductConfigurations.ItemProductRewards = {
+	["ItemProduct1"] = {Name = "gojo", Mutation = "Kitsune", Rarity = "Apex", Level = 1},
+	["ItemProduct2"] = {Name = "Jergo", Mutation = "Neon", Rarity = "Legendary", Level = 2},
+	["ItemProduct3"] = {Name = "Divviti", Mutation = "Kitsune", Rarity = "Mythical", Level = 2},
+}
+
+ProductConfigurations.CashProductRewards = {
+	["CashProduct1"] = 550000000000,
+	["CashProduct2"] = 500000000000000,
+	["CashProduct3"] = 500000000000000000000,
+}
+
+ProductConfigurations.SpeedProductRewards = {
+	["SpeedPlus1"] = 1,
+	["SpeedPlus5"] = 5,
+	["SpeedPlus10"] = 10,
+}
+
+-- Helper to find name by ID (for the Server Handler)
+function ProductConfigurations.GetProductById(id: number)
+	for name, productId in pairs(ProductConfigurations.Products) do
+		if productId == id then return name end
+	end
+	return nil
+end
+
+function ProductConfigurations.GetGamePassById(id: number)
+	for name, passId in pairs(ProductConfigurations.GamePasses) do
+		if passId == id then return name end
+	end
+	return nil
+end
+
+return ProductConfigurations
