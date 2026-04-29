@@ -1,1 +1,1 @@
-Hi! Click "My Roblox Game Product Script" Above!
+Hi! Click "My Roblox Game Leader stats script" Above!
